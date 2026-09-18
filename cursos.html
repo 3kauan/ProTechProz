@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cursos - ProTech</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Inter',sans-serif;
+}
+
+body{
+    background:#f8fafc;
+    color:#111827;
+}
+
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+}
+
+header{
+    background:#070d18;
+    border-bottom:1px solid #1a2335;
+}
+
+.navbar{
+    height:90px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.logo-icon{
+    width:42px;
+    height:42px;
+    background:#2563eb;
+    border-radius:12px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:white;
+    font-weight:700;
+}
+
+.logo h2{
+    color:white;
+}
+
+.logo span{
+    color:#3b82f6;
+}
+
+nav ul{
+    display:flex;
+    gap:40px;
+    list-style:none;
+}
+
+nav a{
+    color:#cbd5e1;
+    text-decoration:none;
+    font-weight:600;
+}
+
+nav a.active{
+    color:white;
+}
+
+.btn-primary{
+    background:#2563eb;
+    color:white;
+    text-decoration:none;
+    padding:14px 24px;
+    border-radius:12px;
+    font-weight:600;
+}
+
+.banner{
+    background:#020817;
+    color:white;
+    padding:100px 0;
+    text-align:center;
+}
+
+.banner span{
+    color:#60a5fa;
+    font-weight:700;
+}
+
+.banner h1{
+    font-size:64px;
+    margin:20px 0;
+}
+
+.banner p{
+    color:#cbd5e1;
+    max-width:700px;
+    margin:auto;
+}
+
+.courses{
+    padding:100px 0;
+}
+
+.course-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.course-card{
+    background:white;
+    border-radius:20px;
+    border:1px solid #e2e8f0;
+    padding:30px;
+    transition:.3s;
+}
+
+.course-card:hover{
+    transform:translateY(-5px);
+}
+
+.icon{
+    width:70px;
+    height:70px;
+    background:#eff6ff;
+    border-radius:16px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:30px;
+    margin-bottom:20px;
+}
+
+.course-card{
+    background:white;
+    border-radius:20px;
+    border:1px solid #e2e8f0;
+    padding:30px;
+    transition:.3s;
+
+    /* Alinha o conteúdo verticalmente */
+    display:flex;
+    flex-direction:column;
+}
+
+.course-card:hover{
+    transform:translateY(-5px);
+}
+
+.icon{
+    width:70px;
+    height:70px;
+    background:#eff6ff;
+    border-radius:16px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:30px;
+    margin-bottom:20px;
+}
+
+.course-card h3{
+    margin-bottom:15px;
+}
+
+.course-card p{
+    color:#64748b;
+    margin-bottom:20px;
+}
+
+.course-card ul{
+    padding-left:18px;
+    margin-bottom:25px;
+}
+
+.course-card li{
+    margin-bottom:8px;
+}
+
+/* Botões ficam todos alinhados na parte inferior */
+.course-card a{
+    display:inline-block;
+    background:#2563eb;
+    color:white;
+    text-decoration:none;
+    font-weight:700;
+    padding:12px 20px;
+    border-radius:10px;
+    margin-top:auto;
+    text-align:center;
+}
+
+.course-card a:hover{
+    background:#1d4ed8;
+}
+
+.course-image{
+    width:100%;
+    height:180px;
+    object-fit:cover;
+    border-radius:15px;
+    margin-bottom:20px;
+}
+
+.course-card{
+    overflow:hidden;
+}
+
+.cta{
+    background:#ffffff;
+    padding:80px 0;
+}
+
+.cta-box{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.cta h2{
+    color:white;
+    font-size:42px;
+}
+
+
+
+footer{
+    background:#020817;
+    color:#cbd5e1;
+    padding:70px 0 25px;
+    border-top:1px solid #1e293b;
+}
+
+.footer-grid{
+    display:grid;
+    grid-template-columns:1.5fr 1fr 1fr 1.3fr;
+    gap:50px;
+    padding-bottom:50px;
+}
+
+.footer-column h3{
+    color:white;
+    font-size:24px;
+    margin-bottom:15px;
+}
+
+.footer-column h4{
+    color:white;
+    font-size:16px;
+    margin-bottom:20px;
+}
+
+.footer-column p{
+    color:#94a3b8;
+    line-height:1.7;
+    font-size:14px;
+    margin-bottom:8px;
+}
+
+.footer-description{
+    max-width:280px;
+}
+
+.footer-column ul{
+    list-style:none;
+}
+
+.footer-column li{
+    margin-bottom:12px;
+}
+
+.footer-column a{
+    color:#94a3b8;
+    text-decoration:none;
+    font-size:14px;
+    transition:.3s;
+}
+
+.footer-column a:hover{
+    color:#60a5fa;
+}
+
+.footer-contact{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+.contact-item{
+    display:flex;
+    align-items:flex-start;
+    gap:10px;
+}
+
+.contact-icon{
+    color:#3b82f6;
+    font-size:16px;
+    min-width:20px;
+}
+
+.footer-bottom{
+    border-top:1px solid #1e293b;
+    padding-top:25px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+}
+
+.footer-bottom p{
+    color:#64748b;
+    font-size:13px;
+}
+
+.footer-bottom-links{
+    display:flex;
+    gap:25px;
+}
+
+.footer-bottom-links a{
+    color:#64748b;
+    text-decoration:none;
+    font-size:13px;
+    transition:.3s;
+}
+
+.footer-bottom-links a:hover{
+    color:#60a5fa;
+}
+
+@media(max-width:900px){
+
+    .footer-grid{
+        grid-template-columns:1fr 1fr;
+        gap:40px;
+    }
+
+}
+
+@media(max-width:600px){
+
+    .footer-grid{
+        grid-template-columns:1fr;
+    }
+
+    .footer-bottom{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .footer-bottom-links{
+        justify-content:center;
+        flex-wrap:wrap;
+    }
+
+}
+
+@media (max-width: 768px){
+
+    .container{
+        width: 95%;
+    }
+
+    .navbar{
+        flex-direction: column;
+        height: auto;
+        gap: 20px;
+        padding: 20px 0;
+    }
+
+    nav ul{
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    .btn-primary{
+        width: 100%;
+        text-align: center;
+    }
+
+    .banner{
+        padding: 60px 0;
+    }
+
+    .banner h1{
+        font-size: 38px;
+    }
+
+    .banner p{
+        font-size: 16px;
+    }
+
+    .course-grid{
+        grid-template-columns: 1fr;
+    }
+
+    .course-card{
+        padding: 20px;
+    }
+
+    .course-image{
+        height: 200px;
+    }
+
+    .cta-box{
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .footer-grid{
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .footer-bottom{
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="container navbar">
+        <div class="logo">
+            <div class="logo-icon">P</div>
+            <h2>Pro<span>Tech</span></h2>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="index.html" class="active">Início</a></li>
+                <li><a href="cursos.html">Cursos</a></li>
+                <li><a href="sobre.html">Sobre Nós</a></li>
+            </ul>
+        </nav>
+
+        <a href="inscricao.html" class="btn-primary">Inscreva-se</a>
+    </div>
+</header>
+
+<section class="banner">
+
+<div class="container">
+
+<span>NOSSOS CURSOS</span>
+
+<h1>Cursos para construir o amanhã</h1>
+
+<p>
+Escolha sua área e desenvolva as competências que o mercado procura.
+</p>
+
+</div>
+
+</section>
+
+<section class="courses">
+
+<div class="container">
+
+<div class="course-grid">
+
+<div class="course-card">
+
+    <img src="images/desenvolvimento.jpg"
+         alt="Desenvolvimento de Sistemas"
+         class="course-image">
+
+    <h3>Desenvolvimento de Sistemas</h3>
+
+    <p>Programação, banco de dados e desenvolvimento web.</p>
+
+    <ul>
+        <li>HTML e CSS</li>
+        <li>JavaScript</li>
+        <li>Banco de Dados</li>
+        <li>Projetos Práticos</li>
+    </ul>
+
+    <a href="curso-desenvolvimento.html">Ver Detalhes →</a>
+
+</div>
+
+<div class="course-card">
+
+    <img src="images/redes.jpg"
+         alt="Redes de Computadores"
+         class="course-image">
+
+    <h3>Redes de Computadores</h3>
+
+    <p>Infraestrutura, servidores e conectividade.</p>
+
+    <ul>
+        <li>TCP/IP</li>
+        <li>Linux</li>
+        <li>Servidores</li>
+        <li>Cloud</li>
+    </ul>
+
+    <a href="curso-redes.html">Ver Detalhes →</a>
+
+</div>
+
+<div class="course-card">
+
+    <img src="images/ciberseguranca.jpg"
+         alt="Cibersegurança"
+         class="course-image">
+
+    <h3>Cibersegurança</h3>
+
+    <p>Proteção de sistemas e análise de vulnerabilidades.</p>
+
+    <ul>
+        <li>Pentest</li>
+        <li>Kali Linux</li>
+        <li>Segurança Web</li>
+        <li>Blue Team</li>
+    </ul>
+
+    <a href="curso-ciberseguranca.html">Ver Detalhes →</a>
+
+</div>
+
+<div class="course-card">
+
+    <img src="images/banco.png"
+         alt="Banco de Dados"
+         class="course-image">
+
+    <h3>Banco de Dados</h3>
+
+    <p>Modelagem e administração de dados.</p>
+
+    <ul>
+        <li>SQL</li>
+        <li>MySQL</li>
+        <li>Modelagem</li>
+        <li>Consultas</li>
+    </ul>
+
+    <a href="curso-banco.html">Ver Detalhes →</a>
+
+</div>
+
+<div class="course-card">
+
+    <img src="images/informatica.webp"
+         alt="Informática"
+         class="course-image">
+
+    <h3>Informática</h3>
+
+    <p>Fundamentos de hardware e software.</p>
+
+    <ul>
+        <li>Hardware</li>
+        <li>Windows</li>
+        <li>Redes</li>
+        <li>Manutenção</li>
+    </ul>
+
+    <a href="curso-informatica.html">Ver Detalhes →</a>
+
+</div>
+
+<div class="course-card">
+
+    <img src="images/suporte-tecnico.jpg"
+         alt="Suporte Técnico"
+         class="course-image">
+
+    <h3>Suporte Técnico</h3>
+
+    <p>Atendimento e resolução de problemas de TI.</p>
+
+    <ul>
+        <li>Help Desk</li>
+        <li>Redes</li>
+        <li>Hardware</li>
+        <li>Sistemas</li>
+    </ul>
+
+    <a href="curso-suporte.html">Ver Detalhes →</a>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="cta">
+
+<div class="container cta-box">
+
+
+</div>
+
+</section>
+
+<footer>
+
+    <div class="container">
+
+        <div class="footer-grid">
+
+            <!-- Sobre -->
+            <div class="footer-column">
+
+                <h3>
+                    Pro<span style="color:#3b82f6;">Tech</span>
+                </h3>
+
+                <p class="footer-description">
+                    Formação técnica de excelência para preparar
+                    profissionais para os desafios do mercado de tecnologia.
+                </p>
+
+            </div>
+
+
+            <!-- Links -->
+            <div class="footer-column">
+
+                <h4>Links rápidos</h4>
+
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="cursos.html">Cursos</a></li>
+                    <li><a href="sobre.html">Sobre Nós</a></li>
+                    <li><a href="inscricao.html">Inscreva-se</a></li>
+                </ul>
+
+            </div>
+
+
+            <!-- Cursos -->
+            <div class="footer-column">
+
+                <h4>Nossos cursos</h4>
+
+                <ul>
+                    <li><a href="curso-desenvolvimento.html">Desenvolvimento de Sistemas</a></li>
+                    <li><a href="curso-redes.html">Redes de Computadores</a></li>
+                    <li><a href="curso-ciberseguranca.html">Cibersegurança</a></li>
+                    <li><a href="curso-banco.html">Banco de Dados</a></li>
+                    <li><a href="curso-suporte.html">Suporte Técnico</a></li>
+                </ul>
+
+            </div>
+
+
+            <!-- Contato -->
+            <div class="footer-column">
+
+                <h4>Entre em contato</h4>
+
+                <div class="footer-contact">
+
+                    <div class="contact-item">
+                        <span class="contact-icon">📍</span>
+                        <p>
+                            Av. Afonso Pena, 1500<br>
+                            Centro, Belo Horizonte - MG<br>
+                            CEP 30130-005
+                        </p>
+                    </div>
+
+                    <div class="contact-item">
+                        <span class="contact-icon">📞</span>
+                        <p>(31) 99999-9999</p>
+                    </div>
+
+                    <div class="contact-item">
+                        <span class="contact-icon">✉️</span>
+                        <p>contato@protech.com</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Rodapé inferior -->
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 ProTech. Todos os direitos reservados.
+            </p>
+
+
+        </div>
+
+    </div>
+
+</footer>
+</body>
+</html>
